@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button, select {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+        }
+        #weather {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
     <h1>Weather App</h1>
-    <div class="search-bar">
-      <input type="text" id="city-input" placeholder="Enter city name">
-      <button id="search-button">Search</button>
-    </div>
-    <div id="weather-info"></div>
-  </div>
-  <script src="script.js"></script>
+    <select id="citySelect">
+        <option value="">Select a city</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Pune">Pune</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Surat">Surat</option>
+    </select>
+    <button onclick="getWeatherByDropdown()">Get Weather</button>
+    <button onclick="getWeatherByGeolocation()">Use Current Location</button>
+    <div id="weather"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
